@@ -1,0 +1,8 @@
+.win-p{
+  border: 0;
+  background: rgba(255, 255, 255, 0.51);
+  padding: 20px 15px;
+}
+  .mapboxgl-ctrl-geocoder{
+    background-color: none !important;
+  }

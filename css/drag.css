@@ -1,0 +1,32 @@
+#mydiv, #divm, #divcalc, #divtodo, #divp,#divmdp, #divqr, #divreg {
+    position: absolute !important;
+    z-index: 9;
+    text-align: center;
+    border:0;
+  }
+  
+  #mydivheader, #divmheader, #divcalcheader, #divtodoheader, #divpheader, #divmdpheader, #divqrheader, #divregheader {
+      width: 100%;
+      cursor: move;
+      z-index: 10;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+        
+    .appheader-meteo{
+        background: rgba(140, 188, 214, 0.66)!important;
+      color: #000;
+    }
+    .appheader-todo{
+    background: rgba(250, 229, 38, 0.663) !important;
+    color: #000;
+}
+.appheader-plans, .appheader-calc, .appheader-mdp{
+  background: rgba(107, 107, 107, 0.66);
+}
+.appheader-qr{
+  background: rgba(89, 161, 31, 0.66);
+}
+.appheader-reg{
+  background: rgba(60, 60, 60, 0.51) !important;
+}

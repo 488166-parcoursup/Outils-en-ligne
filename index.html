@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+
+<head>
+    <!--Meta-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--Title-->
+    <title>onyOS 2.0 Beta 1</title>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+    <script
+            src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://use.fontawesome.com/5bc47c9d4a.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script
+            src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <!-- Link CSS CDN -->
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+          type="text/css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
+          type="text/css">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/devise.css">
+    <link rel="stylesheet" href="css/dock.css">
+    <link rel="stylesheet" href="css/drag.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/maps.css">
+    <link rel="stylesheet" href="css/nightmode.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/mdp.css">
+    <link rel="stylesheet" href="css/qr.css">
+    <!-- JS Traduction-->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr'}, 'traduction');
+        }
+    </script>
+    <!--Icons-->
+    <link rel="apple-touch-icon" sizes="129x129" href="/images/apple-touch-icon-129.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+</head>
+
+<body class="bg-dark" style="background:url(images/wallpaper/graphics/balls/boules-rouges.png) !important;  background-size: cover !important;
+background-attachment:fixed !important;">
+<!-- Dock -->
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light dock d-flex justify-content-center m-1">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <!--             <li class="nav-item">
+                    <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquerhorloge()">
+                      <img src="images/icons/apps/dock/horloge.png" data-bs-toggle="modal" data-bs-target="#horloge" data-backdrop="false"  height="45px">
+                    </button>
+                  </li> -->
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquer()">
+                            <img src="images/icons/apps/dock/Calculatrice.png" data-bs-toggle="modal"
+                                 data-bs-target="#Calculatrice"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link  icon-dock" aria-current="page" href="#"
+                                onclick="AfficherMasquerplans()">
+                            <img src="images/icons/apps/dock/Plans.png" data-bs-toggle="modal" data-bs-target="#Maps"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#"
+                                onclick="AfficherMasquermétéo()">
+                            <img src="images/icons/apps/dock/weather.png" data-bs-toggle="modal" data-bs-target="#Météo"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquertodo()">
+                            <img src="images/icons/apps/dock/todo.png" data-bs-toggle="modal" data-bs-target="#todo"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquerqr()">
+                            <img src="images/icons/apps/dock/qr.png" data-bs-toggle="modal" data-bs-target="#qr"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquermdp()">
+                            <img src="images/icons/apps/dock/mdp.png" data-bs-toggle="modal" data-bs-target="#mdp"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link icon-dock" aria-current="page" href="#" onclick="AfficherMasquerreg()">
+                            <img src="images/icons/apps/dock/settings.png" data-bs-toggle="modal"
+                                 data-bs-target="#Réglages"
+                                 data-backdrop="false" height="45px">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end nonselect text-hours p-2 rounded-3 px-4">
+            <p class="mb-1"><span class="d-flex justify-content-center ">
+            <script src="js/clock.js"></script>
+            <span id="date_heure"></span>
+            <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+          </span>
+                <script src="js/hour.js"></script>
+                <script>
+                    document.write("", jour, "/", mois, "/", an, "");
+                </script>
+            </p>
+        </div>
+    </div>
+</nav>
+<!-- Calculatrice -->
+<div class="position-absolute m-2" id="calculatrice" onclick="focuscalc()" style="display:none ;">
+    <div id="divcalc">
+        <div id="divcalcheader" class="appheader-calc">Calculatrice</i></div>
+        <div class="d-flex justify-content-center  win-calc  calcuator">
+            <div class="calculatrice">
+                <div class="d-flex justify-content-center">
+                    <div class="wrapper window-c">
+                        <div class="calcuator">
+                            <div class="screen">
+                                <span class="input px-2">0</span>
+                                <span class="output px-2">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container calc-v" style="margin: 0; padding-bottom: 0;">
+                    <div class="row d-flex justify-content-center ">
+                        <div class="col-8   touches touches-lg" style="margin-top: 23px;margin-left: 0;">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" onclick="res();">AC</a>
+                        </div>
+                        <div class="col-2 touches" style="color:white;">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="+"
+                               onclick="calculate(this);">+</a>
+                        </div>
+                        <div class="col-2 touches" style="margin-left: 0;">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="7"
+                               onclick="calcul(this);">7</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="8"
+                               onclick="calcul(this);">8</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="9"
+                               onclick="calcul(this);">9
+                            </a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="-"
+                               onclick="calculate(this);">-</a>
+                        </div>
+                        <div class="col-2 touches" style="margin-left: 0; ">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="4"
+                               onclick="calcul(this);">4</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="5"
+                               onclick="calcul(this);">5</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="6"
+                               onclick="calcul(this);">6</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="/"
+                               onclick="calculate(this);">÷</a>
+                        </div>
+                        <div class="col-2 touches" style="margin-left: 0; ">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="1"
+                               onclick="calcul(this);">1</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="2"
+                               onclick="calcul(this);">2</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="3"
+                               onclick="calcul(this);">3</a>
+                        </div>
+                        <div class="col-2 touches">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="*"
+                               onclick="calculate(this);">×</a>
+                        </div>
+                        <div class="col-5   touches touches-lg" style="margin-left: 0;margin-right: 1rem; ">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="0"
+                               onclick="calcul(this);">0</a>
+                        </div>
+                        <div class="col-2 touches mx-1">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-fff" data-num="."
+                               onclick="calcul(this);">,</a>
+                        </div>
+                        <div class="col-2 equal">
+                            <a rel="nofollow" class="btn d-flex justify-content-center text-orange"
+                               onclick="end();">=</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Météo -->
+<div class="m-2 position-absolute" id="météo" onclick="focusm()" style="display: none;">
+    <div id="divm">
+        <div id="divmheader" class="appheader-meteo">Météo</i></div>
+        <div class="window win-m  calcuator">
+            <div class="d-flex justify-content-end">
+                <input type="text" name="city" id="input" class="input-m" placeholder="Nom de la ville">
+                <a href="#" id="search" class="ps-2 pt-1">
+                    <i class="bi i-weather bi-search"></i>
+                </a>
+                <a href="#" id="geo" class="ps-2 pt-1">
+                    <i class="bi i-weather bi-geo-alt"></i>
+                </a>
+            </div>
+            <div id="city" class="text-center"></div>
+            <div class="swap position-absolute start-25 top-0 pt-3">
+                <span class="swap meteo"></span>
+            </div>
+            <section>
+                <style>
+                    .bi-thermometer-sun,
+                    .bi-wind,
+                    .bi-droplet {
+                        font-size: 25px;
+                    }
+                </style>
+                <div id="mainInfo" class="d-flex justify-content-center container pt-4" style="padding: 0 !important;">
+                    <div class="row ms-4">
+                        <div class="col-4">
+                            <div id="icon"></div>
+                        </div>
+                        <div class="col-8">
+                            <div id="tempFa"></div>
+                            <div id="description"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="secondInfo" class="d-flex justify-content-center container text-center pt2">
+                <div class="row">
+                    <div class="col-6" style="width: 100%;">
+                        <div class="info">
+                            <div class="bi bi-thermometer-sun"></div>
+                            <br>
+                            <div id="minMax"></div>
+                        </div>
+                        <div class="info">
+                            <div class="bi bi-wind"></div>
+                            <br>
+                            <div id="windSpeed"></div>
+                        </div>
+                        <div class="info">
+                            <div class="bi bi-droplet"></div>
+                            <br>
+                            <div id="humidity"></div>
+                        </div>
+                    </div>
+                    <div class="col-6" style="width: 100%;">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- Plans -->
+<div class="position-absolute m-5" id="plans" onclick="focusp()" style="visibility: hidden; z-index: 0;">
+    <div id="divp">
+        <div id="divpheader" class="appheader-plans">Plans</i></div>
+        <!-- NE fonctionne pas depuis API Mapbox, API KEY cassée -->
+        <div class=" window-plans calculator" id="map" style="width: 900px !important; height: 650px !important;">
+
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+            </style>
+        </div>
+    </div>
+</div>
+<!-- To-Do -->
+<div id="notes" class="m-5 position-absolute" onclick="focust()" style="display: none;">
+    <div id="mydiv">
+        <div id="mydivheader" class="appheader-todo">To-Do</i></div>
+        <div class="bg-todo" id="notesL" style=" width: max-content;
+        overflow-y: scroll !important;">
+            <div class="d-flex justify-content-center window win-todo  calcuator "
+                 style="overflow-y: scroll !important;">
+                <section class="container" style="background-attachment: fixed; overflow-y: scroll !important;">
+                    <div class="row" style="max-width:none;">
+                        <div class="col-6">
+                            <div>
+                                <form action="" id="form">
+                                    <input type="text" id="input-name" placeholder="Nommer l'élément ">
+                                    <button type="submit" name="sub-todo" class="btn btn-primary rounded-20"
+                                            id="btn-add">Ajouter
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <ul id="to-do-list"></ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mot de Passe -->
+<div id="mdp" class="m-4 position-absolute" onclick="focusmdp()" style="display: none;">
+    <div id="divmdp">
+        <div id="divmdpheader" class="appheader-mdp">Générateur de mot de passe</i></div>
+        <div class="c-mdp">
+            <div class="win-mdp">
+                <div class="container">
+                    <div class="result-container">
+                        <span id="result"></span>
+                        <button class="btn" id="clipboard">
+                            <i class="bi bi-clipboard2"></i>
+                        </button>
+                    </div>
+                    <div class="settings">
+                        <div class="setting">
+                            <label>Nombre de caractères</label>
+                            <input type="number" id="length" min='10' max='40' value='15'/>
+                        </div>
+                        <div class="setting">
+                            <label>Majuscules</label>
+                            <input type="checkbox" id="uppercase" checked/>
+                        </div>
+                        <div class="setting">
+                            <label>Minuscules</label>
+                            <input type="checkbox" id="lowercase" checked/>
+                        </div>
+                        <div class="setting">
+                            <label>Nombres</label>
+                            <input type="checkbox" id="numbers" checked/>
+                        </div>
+                        <div class="setting">
+                            <label>Symboles</label>
+                            <input type="checkbox" id="symbols" checked/>
+                        </div>
+                    </div>
+                    <button class="btn btn-large" id="generate">
+                        Générer
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- QR -->
+<div id="qr" class=" position-absolute px-5" onclick="focusqr()" style="display: none;">
+    <div id="divqr">
+        <div id="divqrheader" class="appheader-qr">QR Code</i></div>
+        <main class="win-qr">
+            <canvas id="qr-panel"></canvas>
+
+            <div id="form-panel" class="pb-4">
+                <input id="qr-input" class="qrinpt" type="text" placeholder="Enter text to generate QR Code">
+
+                <button id="gen-qr-btn" class="btn btn-inpt">Générer</button>
+            </div>
+
+        </main>
+    </div>
+</div>
+<!-- Réglages -->
+<div id="réglages" class="m-5 position-absolute pos-reg px-5" onclick="focusreg()" style="display: none;">
+    <div id="divreg">
+        <div id="divregheader" class="appheader-reg">Réglages</i></div>
+        <div class="d-flex justify-content-center  win-reglages  overflow-hidden">
+            <div class="container" style="max-width: none;">
+                <div class="row d-flex justify-content-center" style="max-width: none;">
+                    <div class="col-12 text-end">
+                        <div id="traduction" style="display: block !important;"></div>
+                    </div>
+                    <div class="col-12 " style="height: 350px;overflow: scroll;">
+                        <div class="d-flex justify-content-center mb-3 overflow-scroll">
+                            <h5 class="fw-bold">Fond d'écran</h5>
+                        </div>
+                        <div>
+                            <p class="text-start">onyOS 2</p>
+                            <button class="p-1" type="button" onclick="rouge()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-rouges.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="orange()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-orange.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="jaune()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-jaune.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="vert()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-vert.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="bleu()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-bleu.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="violet()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-violet.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="rose()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-rose.png');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="noir()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-noir.png');"></div>
+                            </button>
+                            <br>
+                            <p class="text-start">onyOS 2 Mode Sombre</p>
+                            <button class="p-1" type="button" onclick="rouged()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-rouges-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="oranged()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-orange-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="jauned()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-jaune-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="vertd()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-vert-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="bleud()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-bleu-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="violetd()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-violet-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="rosed()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-rose-dark.png');">
+                                </div>
+                            </button>
+                            <button class="p-1" type="button" onclick="noird()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/boules-noir-dark.png');">
+                                </div>
+                            </button>
+                            <br>
+                            <p class="text-start">Nature</p>
+                            <button class="p-1" type="button" onclick="changewpalpes()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/alpes.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpdeath()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/death-valley.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewphills()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/hills.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpsf()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/san-francisco.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpyogr()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/yosemite-ground.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpyo()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/yosemite.jpg');"></div>
+                            </button>
+                            <br>
+                            <p class="text-start">onyOS 1</p>
+                            <button class="p-1" type="button" onclick="changewpwin()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/default.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpcircle()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/circles.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewplines()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/lines.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpsplash()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/splash.jpg');"></div>
+                            </button>
+                            <button class="p-1" type="button" onclick="changewpvagues()">
+                                <div class="wa-select"
+                                     style="background: url('images/wallpaper/reg-app/diff.jpg');"></div>
+                            </button>
+
+                            <!-- Les paysages proviennent de Pixabay / Fields wallpapers are from Pixabay. -->
+                            <!-- Les fonds d'écrans d'onyOS 1 proviennent du site <a href="https://hdqwalls.com/">HDQwalls</a> -->
+                            <!-- Les fond d'écrans graphiques d'onyOS 2 sont des créations originales par ony® pour onyOS 2, toute reproduction et/ou réutilisation quelles qu'elles soient sont purement interdites !-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-start indicator">
+        <span class="beta text-dark d-flex justify-content-center p-2" style="padding: 10px !important;">onyOS 2.0 Beta
+          1 "2aB2205"</span>
+        </div>
+    </div>
+</div>
+<script src="js/qr.js"></script>
+<script src="js/drag-2.js"></script>
+<script src="js/focus.js"></script>
+<script src="js/drag.js"></script>
+<script src="js/mdp.js"></script>
+<script src="js/todo.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/wallpaper.js"></script>
+<script src="js/dock.js"></script>
+<script src="js/maps-plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+<script src="js/weather.js"></script>
+</body>
+
+</html>

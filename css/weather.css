@@ -1,0 +1,73 @@
+.input-m {
+    border-radius: 9px;
+    border: 0;
+    padding: 5px;
+    background: rgba(215, 236, 248, 0.9);
+}
+
+.swap button {
+    padding: 0.3rem;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    margin: 5px;
+}
+
+.swap button:hover {
+    border: 0;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.082);
+    transition: all 1s;
+    border: 1px solid #fff;
+
+}
+
+i {
+    color: #000;
+    font-size: medium !important;
+}
+
+span.meteo {
+    width: 32%;
+    margin: 0 auto;
+    height: 30px;
+}
+
+div#mainInfo {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.win-m {
+    border: 0;
+    background: linear-gradient(180deg, rgba(118, 207, 255, 0.51) 28.65%, rgba(25, 163, 238, 0.51) 100%) !important;
+    border-radius: 0px 0px 15px 15px;
+    padding: 20px 15px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#secondInfo {
+    display: none;
+    grid-template-columns: 1fr;
+    font-size: 18px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+.weather-icon {
+    height: 90px;
+    width: auto;
+    margin-right: 80px;
+}

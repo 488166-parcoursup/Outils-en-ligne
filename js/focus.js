@@ -1,0 +1,58 @@
+function focuscalc() {
+    document.getElementById('calculatrice').style.zIndex = 1000;
+    document.getElementById('météo').style.zIndex = 999;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 999;
+    document.getElementById('qr').style.zIndex = 999;
+    document.getElementById('mdp').style.zIndex = 999;
+    document.getElementById('réglages').style.zIndex = 999;
+}
+function focusm() {
+    document.getElementById('calculatrice').style.zIndex = 999;
+    document.getElementById('météo').style.zIndex = 1000;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 999;
+    document.getElementById('qr').style.zIndex = 999;
+    document.getElementById('mdp').style.zIndex = 999;
+    document.getElementById('réglages').style.zIndex = 999;}
+function focusp() {
+    document.getElementById('calculatrice').style.zIndex = 999;
+    document.getElementById('météo').style.zIndex = 999;
+    document.getElementById('plans').style.zIndex = 1000;
+    document.getElementById('notes').style.zIndex = 999;
+    document.getElementById('qr').style.zIndex = 999;
+    document.getElementById('mdp').style.zIndex = 999;
+    document.getElementById('réglages').style.zIndex = 999;}
+function focust() {
+    document.getElementById('calculatrice').style.zIndex = 999;
+    document.getElementById('météo').style.zIndex = 999;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 1001;
+    document.getElementById('qr').style.zIndex = 999;
+    document.getElementById('mdp').style.zIndex = 999;
+    document.getElementById('réglages').style.zIndex = 999;}
+function focusqr() {
+    document.getElementById('calculatrice').style.zIndex = 999;
+    document.getElementById('météo').style.zIndex = 999;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 999;
+    document.getElementById('qr').style.zIndex = 1000;
+    document.getElementById('mdp').style.zIndex = 999;
+    document.getElementById('réglages').style.zIndex = 999;}
+function focusmdp() {
+    document.getElementById('calculatrice').style.zIndex = 999;
+    document.getElementById('météo').style.zIndex = 999;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 999;
+    document.getElementById('qr').style.zIndex = 999;
+    document.getElementById('mdp').style.zIndex = 1000;
+    document.getElementById('réglages').style.zIndex = 999;}
+function focusreg() {
+    document.getElementById('calculatrice').style.zIndex = 990;
+    document.getElementById('météo').style.zIndex = 990;
+    document.getElementById('plans').style.zIndex = 500;
+    document.getElementById('notes').style.zIndex = 990;
+    document.getElementById('qr').style.zIndex = 990;
+    document.getElementById('mdp').style.zIndex = 990;
+    document.getElementById('réglages').style.zIndex = 10000;
+}

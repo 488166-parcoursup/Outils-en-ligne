@@ -1,0 +1,35 @@
+@media (prefers-color-scheme: dark) {
+    .dock {
+        background: rgba(0, 0, 0, 0.51) !important;
+        box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25) !important;
+        border-radius: 9px;
+        backdrop-filter: blur( 20px );
+        -webkit-backdrop-filter: blur( 20px );
+                padding: 0.5rem 2rem;
+      }
+    }
+.navbar{
+    padding: 0 !important;
+}
+.dock {
+    background: rgba(255, 255, 255, 0.51);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.07);
+    border-radius: 9px;
+    backdrop-filter: blur( 20px ) !important;
+    -webkit-backdrop-filter: blur( 20px ) !important;
+}
+ #date_heure{
+    pointer-events: none;
+}
+.nonselect{
+ -moz-user-select: none; 
+ -webkit-user-select: none;
+ -ms-user-select: none;
+ user-select: none; 
+}
+.icon-dock{
+    margin-right: 1.5rem;
+}
+.text-hours{
+    color: #000;
+}

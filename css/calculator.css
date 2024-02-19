@@ -1,0 +1,121 @@
+.win-calc{
+  border: 0;  
+  padding: 20px 15px;
+  background: rgba( 113, 113, 113, 0.25 );
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  }
+h1{
+    text-align: center;
+
+    color: rgba(0,0,0,0.6);
+    font-size: 50px;
+    font-style: italic;
+  }
+  .wrapper{
+    max-width: 1000px;
+    margin: 0;
+    display: flex;
+    display: -webkit-flex; 
+  }
+  .screen{
+    width: 300px;
+height: 82px;
+    background: rgba(255, 255, 255, 0.51);
+
+    border-radius: 10px;
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+  }
+  .input, .output{
+  width: 300px;
+  margin-top:2px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: right;
+  overflow: hidden;
+  }
+  .input{
+    height: 35px;
+    font-size: 30px;
+  }
+  .output{
+    height:35px;
+    font-size: 20px;
+  }
+  .row{
+      max-width: 300px;
+  }
+  .equal{
+    background: rgba(255, 139, 30, 0) !important;
+    border: 1px solid rgb(247, 74, 6);
+    border-radius: 25px;
+    margin-top: 23px;
+    margin-left: 23px;
+    padding: 0.15rem;
+    transition: all 0.3s !important;
+
+  }
+  .equal:hover{
+    background: rgb(247, 74, 6) !important;
+    color: white !important;
+  }
+  .touches{
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid #fff;
+    color: #fff !important;
+    border-radius: 25px;
+    margin-top: 23px;
+    margin-left: 23px;
+    padding: 0.15rem;
+    transition: all 0.3s !important;
+
+}
+
+.touches:hover{
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
+}
+.text-orange{
+  color: rgb(247, 74, 6);
+}
+.text-fff{
+  color: #fff;
+}
+.touches-lg{
+  border-radius: 15px !important;
+}
+.calc-v{
+  margin: 0;
+}
+.container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+margin-right: 0;
+margin-left: 0; 
+  }
+.modal-header{
+  border-bottom: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+.modal-footer{
+  border-bottom: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+background-color: rgba(217, 217, 217,0.6);
+}
+.modal-dialog{
+  margin: auto;
+padding: 0;
+max-width: 350px;
+}
+@media (min-width: 576px){
+.modal-dialog {
+max-width: 350px;
+}
+}

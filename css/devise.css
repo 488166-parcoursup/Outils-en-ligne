@@ -1,0 +1,41 @@
+#display {
+  text-align: center;
+  font-size: 30px;
+  background: rgba(177, 177, 177, 0.514);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  width: max-content;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.calcbutton-d {
+  border-radius: 25px;
+  font-size: 2rem;
+  color: rgb(50, 50, 50);
+  border: transparent;
+  background: rgba(196, 195, 195, 0.51);
+  height: 52px !important;
+}
+.calcbutton-d:hover {
+
+  background: rgba(235, 235, 235, 0.0) !important;
+}
+.menu{
+width: max-content;
+}
+.buttoncalcpadding{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.window-d{
+  background: linear-gradient(180deg, rgba(232, 232, 232, 0.51) 28.65%, rgba(167, 168, 169, 0.51) 100%);
+  border-radius: 20px;
+  top: 50%;
+  backdrop-filter: blur( 20px );
+  -webkit-backdrop-filter: blur( 20px );
+  
+}
+#equals{
+  background: rgba(255, 138, 30, 0.7);
+}

@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+
+  }
+img{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+button{
+    background-color: transparent;
+    border: 0;
+}
+.window{
+    width: 720px;
+    height: 480px;
+    border: 0;
+    padding: 20px 15px;
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+}
+#calculatrice, #météo, #notes, #mdp, #qr, #réglages{
+    z-index: 2;
+}
